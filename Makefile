@@ -5,18 +5,27 @@
 ## makefile solver
 ##
 
-GEN	=	make -C generator/Makefile
+.PHONY	:	all clean fclean re
 
-SOLVE	=	make -C solver/Makefile
+GEN				=	make -C generator
+GEN_clean		=	make clean -C generator
+GEN_fclean		=	make fclean -C generator
 
-all:	$(GEN) $(SOLVE)
+SOLVE			=	make -C solver
+SOLVE_clean		=	make clean -C solver
+SOLVE_fclean	=	make fclean -C solver
+
+all:
+	$(GEN)
+	$(SOLVE)
 
 clean:
-	@rm -f $(OBJ)
+	$(GEN_clean)
+	$(SOLVE_clean)
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -f *~
-	clear
+	$(GEN_fclean)
+	$(SOLVE_fclean)
+#	clear
 
 re:	fclean all
