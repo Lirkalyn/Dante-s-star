@@ -1,0 +1,19 @@
+*****XX****X********XXXX
+XX******XX***XXXXX***XXX
+XX***XXXX**XXXXX****XXXX
+XX***XXXXXXXXXXXXXX****X
+*****XXXXXX****XX***XXXX
+XX*************XXXX*****
+
+j->
+i
+↓
+
+
+over_filling :
+*****XX****X********XXXX
+XX******XX***XXXXX**XXXX
+XX***XXXXXXXXXXXXX**XXXX
+XX***XXXXXXXXXXXXXX*XXXX
+XX***XXXXXX****XXXX*XXXX
+XX*************XXXX*****
