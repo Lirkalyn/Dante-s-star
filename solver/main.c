@@ -26,9 +26,14 @@ char *height_finders(char *buf, int height[])
 
 int algo_start(char **tab, int *height)
 {
+//    char **tmp = tab;
+
     while (check_filling_algorithm(tab, height) != 0)
         tab = filling_algorithm(tab, height);
     my_show_word_array(tab, height[0]);
+    pledge_algorithm(tab, height);
+//    printf("\n\n");
+//    my_show_word_array(tmp, height[0]);
 }
 
 int main(int ac, char **av)

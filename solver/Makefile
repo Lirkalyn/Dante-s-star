@@ -10,7 +10,8 @@
 SRC	=	main.c	\
 		my_show_word_array.c \
 		my_str_to_word_array.c \
-		filler.c
+		filler.c \
+		pledge.c
 
 OBJ	=	$(SRC:.c=.o)
 
