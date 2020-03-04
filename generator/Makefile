@@ -8,6 +8,12 @@
 .PHONY	:	$(NAME) clean fclean re
 
 SRC	=	main.c	\
+		mem_alloc_arr.c	\
+		my_getnbr.c	\
+		my_putstr.c	\
+		my_putchar.c	\
+		my_strlen.c	\
+		my_compute_power_rec.c	\
 
 OBJ	=	$(SRC:.c=.o)
 
