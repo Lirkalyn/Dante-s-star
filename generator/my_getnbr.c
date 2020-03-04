@@ -6,6 +6,7 @@
 */
 
 #include "my.h"
+
 int str_to_nb(char const *str, int n)
 {
     int dec = 10;
