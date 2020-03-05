@@ -12,7 +12,7 @@ int my_show_word_array(char * const *tab, int len);
 char **my_str_to_word_array(char const *str);
 char **filling_algorithm(char **tab, int *height);
 int check_filling_algorithm(char **tab, int *height);
-char **pledge_algorithm(char **tab, int *height, char **tmp);
+char **pledge_algorithm(char **tab, int *height, char **tmp, int *old_i_j);
 int special_cases_2(int i, int j, char **tab, int *height);
 char **copy(char **tab, int *height);
 

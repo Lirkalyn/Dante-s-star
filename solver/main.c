@@ -27,6 +27,7 @@ char *height_finders(char *buf, int height[])
 int algo_start(char **tab, int *height)
 {
     char **tmp;
+    int *old_i_j = (int *)malloc(2 * sizeof(int));
 
     while (check_filling_algorithm(tab, height) != 0)
         tab = filling_algorithm(tab, height);
@@ -34,9 +35,11 @@ int algo_start(char **tab, int *height)
 //    printf("\n\n");
     tmp = copy(tab, height);
 //    my_show_word_array(tmp, height[0]);
-    pledge_algorithm(tab, height, tmp);
+    if (tab[0][0] != '*' || tab[height[1]][(height[0] - 1)] != '*' || old_i_j == NULL)
+        return 84;
+    tab = pledge_algorithm(tab, height, tmp, old_i_j);
 //    printf("\n\n");
-//    my_show_word_array(tmp, height[0]);
+    my_show_word_array(tab, height[0]);
 }
 
 int main(int ac, char **av)
