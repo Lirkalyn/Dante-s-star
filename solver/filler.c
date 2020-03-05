@@ -12,6 +12,25 @@
 #include <fcntl.h>
 #include "my.h"
 
+char **copy(char **tab, int *height)
+{
+    char **tmp = (char **)malloc((height[1] + 2) * sizeof(char *));
+    int i;
+
+    if (tmp == NULL)
+        return NULL;
+    tmp[height[1] + 1] = NULL;
+    for (int i = 0; i <= height[1]; i++) {
+        tmp[i] = (char *)malloc((height[0] + 1) * sizeof(char));
+        if (tmp[i] == NULL)
+            return NULL;
+        tmp[i][height[0]] = '\0';
+        for (int j = 0; tab[i][j] != '\0'; j++)
+            tmp[i][j] = tab[i][j];
+    }
+    return tmp;
+}
+
 int special_cases_2(int i, int j, char **tab, int *height)
 {
     int up = 0;
