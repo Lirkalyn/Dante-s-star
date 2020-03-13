@@ -14,6 +14,7 @@ SRC	=	main.c	\
 		my_putchar.c	\
 		my_strlen.c	\
 		my_compute_power_rec.c	\
+		compare.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

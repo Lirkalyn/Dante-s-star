@@ -5,7 +5,7 @@
 ** We disp characters
 */
 
-#include <string.h>
+#include <unistd.h>
 
 void my_putchar(char c)
 {
