@@ -5,11 +5,11 @@
 ** filling-desu
 */
 
-#include <sys/stat.h>
+/*#include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <fcntl.h>
+#include <fcntl.h>*/
 #include "my.h"
 
 char **copy(char **tab, int *height)
@@ -78,8 +78,8 @@ char **filling_algorithm(char **tab, int *height)
             rsl = special_cases_2(i, j, tab, height);
             if (special_cases(i, j, tab, height))
                 tab[i][j] = 'X';
-            else if ((i == 0 || i == height[1] || j == 0 || j == (height[0] - 1))
-                        && rsl == 2)
+            else if ((i == 0 || i == height[1] || j == 0
+                        || j == (height[0] - 1)) && rsl == 2)
                 tab[i][j] = 'X';
             if (rsl >= 3)
                 tab[i][j] = 'X';

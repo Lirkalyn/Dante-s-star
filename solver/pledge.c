@@ -5,11 +5,11 @@
 ** pledge-desu
 */
 
-#include <sys/stat.h>
+/*#include <sys/stat.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <fcntl.h>
+#include <fcntl.h>*/
 #include "my.h"
 
 char **go_right(char **tab, int *height, int *i, int *j)
@@ -23,8 +23,11 @@ char **go_right(char **tab, int *height, int *i, int *j)
 
 char **go_left(char **tab, int *height, int *i, int *j)
 {
-    for (; tab[*i][*j] != 'X' && *j >= 0 && tab[*i][(*j - 1)] != 'o'; *j -= 1)
-        tab[*i][*j] = 'o';
+    for (; *j >= 0 && tab[*i][*j] != 'X'; *j -= 1)
+        if (*j == 0 && tab[*i][*j] != 'o')
+            tab[*i][*j] = 'o';
+        else if ((*j - 1) >= 0 && tab[*i][(*j - 1)] != 'o')
+            tab[*i][*j] = 'o';
     *j += 1;
     return tab;
 }
@@ -67,7 +70,7 @@ char **pledge_algorithm(char **tab, int *height, char **tmp, int *old_i_j)
             tab = go_up_or_down(tab, height, &i, &j);
         if (i == old_i_j[0] && j == old_i_j[1]) {
             tmp[i][j] = 'X';
-            return pledge_algorithm(tmp, height, tmp, old_i_j);
+            return freee(tab, height, tmp);
         }
         else
             old_i_j = old(old_i_j, i, j);

@@ -5,7 +5,8 @@
 ** my_str_to_word_array
 */
 
-#include <stdlib.h>
+//#include <stdlib.h>
+#include "my.h"
 
 int calcsize(char const *str)
 {
