@@ -67,7 +67,7 @@ int main(int ac, char **av)
     map = mem_alloc_char_arr(row, col);
     if (ac == 3)
         map = make_maze(map, row, col);
-    else if (ac == 4 && cmp_str(av[3], "[perfect]") == 1)
+    else if (ac == 4 && cmp_str(av[3], "perfect") == 1)
         map = make_perfect(map, row, col);
     else
         return (84);
