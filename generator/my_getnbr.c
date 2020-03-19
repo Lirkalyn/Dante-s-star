@@ -12,17 +12,16 @@ int str_to_nb(char const *str, int n)
     int dec = 10;
     int nb = 0;
     int i = n;
-    int len;
+    int len = my_strlen(str);
     int c = n;
-    len = my_strlen(str);
-    while (str[n] != '\0') {
+
+    while (str[n] != '\0')
         if (str[n] <= '9' && str[n] >= '0') {
             i = i + 1;
             n = n + 1;
-        } else {
-            n = len;
         }
-    }
+        else
+            n = len;
     len = i - c - 1;
     dec = my_compute_power_rec(dec, len);
     for (int z = c; z != i; z++) {
@@ -50,8 +49,8 @@ int str_to_int_red(char const *str)
     int nb = 0;
     int i = 0;
     int j = 0;
-    int len;
-    len = my_strlen(str);
+    int len = my_strlen(str);
+
     while (str[i] != '\0') {
         if (str[i] > '9' || str[i] < '0') {
             i = i + 1;
@@ -69,6 +68,7 @@ int my_getnbr(char const *str)
 {
     int nb = 0;
     int len = 0;
+
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] >= '0' && str[i] <= '9')
             len++;

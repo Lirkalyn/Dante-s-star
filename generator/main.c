@@ -23,6 +23,7 @@ void my_put_maze(char **maze, int n)
 char **make_hole(char **map, int row, int col)
 {
     int p;
+
     for (int i = 0; i != row; i++) {
         if (i % 2 != 0)
             map[i][rand() % col + 1] = '*';
@@ -34,6 +35,7 @@ char **make_hole(char **map, int row, int col)
 char **make_maze(char **map, int row, int col)
 {
     char c = '*';
+
     for (int i = 0; i != row; i++) {
         if (i % 2 == 0)
             c = '*';
@@ -54,11 +56,15 @@ char **make_perfect(char **map, int row, int col)
 
 int main(int ac, char **av)
 {
+    int row;
+    int col;
+    char **map;
+
     if (ac > 4 || ac < 3)
         return (84);
-    int row = my_getnbr(av[1]);
-    int col = my_getnbr(av[2]);
-    char **map = mem_alloc_char_arr(row, col);
+    row = my_getnbr(av[1]);
+    col = my_getnbr(av[2]);
+    map = mem_alloc_char_arr(row, col);
     if (ac == 3)
         map = make_maze(map, row, col);
     else if (ac == 4 && cmp_str(av[3], "[perfect]") == 1)
