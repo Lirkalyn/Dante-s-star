@@ -9,9 +9,13 @@
 
 void my_put_maze(char **maze, int n)
 {
+    int lenght = 0;
+
+    for (; maze[lenght] != 0; lenght++);
     for (int i = 0; i != n; i++) {
         my_putstr(maze[i]);
-        my_putchar('\n');
+        if (i != (lenght - 1))
+            my_putchar('\n');
     }
 }
 
